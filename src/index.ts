@@ -7,6 +7,8 @@ import {Routes} from "./routes";
 
 import * as cors from "cors"
 
+const PORT = process.env.PORT  ||  3000;
+
 createConnection().then(async connection => {
 
     // create express app
@@ -31,7 +33,7 @@ createConnection().then(async connection => {
     // ...
 
     // start express server
-    app.listen(3000);
+    app.listen(PORT);
 
     // insert new users for test
    /*  await connection.manager.save(connection.manager.create(User, {
